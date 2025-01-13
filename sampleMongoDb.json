@@ -1,0 +1,207 @@
+{
+  "tables": [
+    "department",
+    "employee",
+    "project",
+    "employeeProject"
+  ],
+  "columns": {
+    "department": [
+      {
+        "name": "deptId",
+        "type": "objectId",
+        "allowNull": false,
+        "description": "Department unique identifier"
+      },
+      {
+        "name": "deptName",
+        "type": "string",
+        "allowNull": false,
+        "description": "Department name"
+      },
+      {
+        "name": "location",
+        "type": "string",
+        "allowNull": true,
+        "description": "Department location"
+      }
+    ],
+    "employee": [
+      {
+        "name": "empId",
+        "type": "objectId",
+        "allowNull": false,
+        "description": "Employee unique identifier"
+      },
+      {
+        "name": "firstName",
+        "type": "string",
+        "allowNull": false,
+        "description": "Employee first name"
+      },
+      {
+        "name": "lastName",
+        "type": "string",
+        "allowNull": false,
+        "description": "Employee last name"
+      },
+      {
+        "name": "dob",
+        "type": "date",
+        "allowNull": true,
+        "description": "Date of birth"
+      },
+      {
+        "name": "email",
+        "type": "string",
+        "allowNull": true,
+        "description": "Employee email"
+      },
+      {
+        "name": "phoneNumber",
+        "type": "string",
+        "allowNull": true,
+        "description": "Contact number"
+      },
+      {
+        "name": "salary",
+        "type": "number",
+        "allowNull": false,
+        "description": "Employee salary"
+      },
+      {
+        "name": "hireDate",
+        "type": "date",
+        "allowNull": true,
+        "description": "Date of hiring"
+      },
+      {
+        "name": "deptId",
+        "type": "objectId",
+        "allowNull": true,
+        "description": "Reference to department"
+      }
+    ],
+    "project": [
+      {
+        "name": "projId",
+        "type": "objectId",
+        "allowNull": false,
+        "description": "Project unique identifier"
+      },
+      {
+        "name": "projName",
+        "type": "string",
+        "allowNull": false,
+        "description": "Project name"
+      },
+      {
+        "name": "startDate",
+        "type": "date",
+        "allowNull": true,
+        "description": "Project start date"
+      },
+      {
+        "name": "endDate",
+        "type": "date",
+        "allowNull": true,
+        "description": "Project end date"
+      },
+      {
+        "name": "budget",
+        "type": "number",
+        "allowNull": false,
+        "description": "Project budget"
+      }
+    ],
+    "employeeProject": [
+      {
+        "name": "empId",
+        "type": "objectId",
+        "allowNull": false,
+        "description": "Reference to employee"
+      },
+      {
+        "name": "projId",
+        "type": "objectId",
+        "allowNull": false,
+        "description": "Reference to project"
+      },
+      {
+        "name": "role",
+        "type": "string",
+        "allowNull": true,
+        "description": "Employee role in project"
+      },
+      {
+        "name": "hoursWorked",
+        "type": "number",
+        "allowNull": true,
+        "description": "Hours worked on project"
+      }
+    ]
+  },
+  "primaryKeys": {
+    "department": [
+      {
+        "name": "_id",
+        "type": "objectId",
+        "autoIncrement": false,
+        "allowNull": false
+      }
+    ],
+    "employee": [
+      {
+        "name": "_id",
+        "type": "objectId",
+        "autoIncrement": false,
+        "allowNull": false
+      }
+    ],
+    "project": [
+      {
+        "name": "_id",
+        "type": "objectId",
+        "autoIncrement": false,
+        "allowNull": false
+      }
+    ],
+    "employeeProject": [
+      {
+        "name": "_id",
+        "type": "objectId",
+        "autoIncrement": false,
+        "allowNull": false
+      }
+    ]
+  },
+  "foreignKeys": {
+    "department": [],
+    "employee": [
+      {
+        "columnName": "deptId",
+        "referenceTable": "department",
+        "referenceColumn": "_id",
+        "referenceTableFirstCap": "Department",
+        "onDelete": "SET NULL"
+      }
+    ],
+    "project": [],
+    "employeeProject": [
+      {
+        "columnName": "empId",
+        "referenceTable": "employee",
+        "referenceColumn": "_id",
+        "referenceTableFirstCap": "Employee",
+        "onDelete": "CASCADE"
+      },
+      {
+        "columnName": "projId",
+        "referenceTable": "project",
+        "referenceColumn": "_id",
+        "referenceTableFirstCap": "Project",
+        "onDelete": "CASCADE"
+      }
+    ]
+  }
+}
