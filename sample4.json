@@ -1,0 +1,80 @@
+{
+  "stringExample": "Hello, World!",
+  "numberExamples": {
+    "integer": 42,
+    "float": 3.14,
+    "negativeNumber": -10,
+    "scientificNotation": 6.022e23
+  },
+  "booleanExamples": {
+    "trueValue": true,
+    "falseValue": false
+  },
+  "nullExample": null,
+  "arrayExamples": {
+    "simpleArray": [1, 2, 3, 4, 5],
+    "mixedArray": ["apple", 42, true, null, { "key": "value" }],
+    "nestedArray": [
+      [1, 2, 3],
+      ["a", "b", "c"],
+      [true, false, null]
+    ]
+  },
+  "objectExamples": {
+    "simpleObject": {
+      "name": "Alice",
+      "age": 30,
+      "isStudent": false
+    },
+    "nestedObject": {
+      "person": {
+        "name": "Bob",
+        "address": {
+          "street": "123 Main St",
+          "city": "Wonderland",
+          "zipCode": "12345"
+        }
+      }
+    }
+  },
+  "specialValues": {
+    "emptyString": "",
+    "emptyArray": [],
+    "emptyObject": {},
+    "unicodeCharacters": "😊🎉🌍",
+    "escapedCharacters": "Line 1\\nLine 2\\tTabbed"
+  },
+  "datesAndTimes": {
+    "isoDate": "2023-10-05T14:30:00Z",
+    "customFormat": "October 5, 2023"
+  },
+  "complexExample": {
+    "users": [
+      {
+        "id": 1,
+        "name": "John Doe",
+        "email": "john.doe@example.com",
+        "roles": ["admin", "user"],
+        "preferences": {
+          "theme": "dark",
+          "notifications": true
+        }
+      },
+      {
+        "id": 2,
+        "name": "Jane Smith",
+        "email": "jane.smith@example.com",
+        "roles": ["user"],
+        "preferences": {
+          "theme": "light",
+          "notifications": false
+        }
+      }
+    ],
+    "metadata": {
+      "createdAt": "2023-10-01T12:00:00Z",
+      "updatedAt": "2023-10-05T09:15:00Z",
+      "version": "1.0.0"
+    }
+  }
+}
