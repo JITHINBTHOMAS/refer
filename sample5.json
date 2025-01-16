@@ -1,0 +1,46 @@
+{
+  "database": "sample_db",
+  "collections": [
+    {
+      "name": "department",
+      "fields": [
+        { "name": "dept_id", "type": "number", "required": true, "autoIncrement": true },
+        { "name": "dept_name", "type": "string", "required": true },
+        { "name": "location", "type": "string" }
+      ]
+    },
+    {
+      "name": "employee",
+      "fields": [
+        { "name": "emp_id", "type": "number", "required": true, "autoIncrement": true },
+        { "name": "first_name", "type": "string", "required": true },
+        { "name": "last_name", "type": "string", "required": true },
+        { "name": "dob", "type": "date" },
+        { "name": "email", "type": "string" },
+        { "name": "phone_number", "type": "string" },
+        { "name": "salary", "type": "number", "required": true },
+        { "name": "hire_date", "type": "date", "default": "current_timestamp" },
+        { "name": "dept_id", "type": "number", "relation": "department.dept_id" }
+      ]
+    },
+    {
+      "name": "project",
+      "fields": [
+        { "name": "proj_id", "type": "number", "required": true, "autoIncrement": true },
+        { "name": "proj_name", "type": "string", "required": true },
+        { "name": "start_date", "type": "date" },
+        { "name": "end_date", "type": "date" },
+        { "name": "budget", "type": "number", "required": true }
+      ]
+    },
+    {
+      "name": "employee_project",
+      "fields": [
+        { "name": "emp_id", "type": "number", "required": true, "relation": "employee.emp_id" },
+        { "name": "proj_id", "type": "number", "required": true, "relation": "project.proj_id" },
+        { "name": "role", "type": "string" },
+        { "name": "hours_worked", "type": "number", "default": 0.0 }
+      ]
+    }
+  ]
+}
