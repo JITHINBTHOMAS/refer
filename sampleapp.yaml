@@ -13,7 +13,7 @@ paths:
       responses:
         '200':
           description: A list of departments
-  /departmentS:
+  /department:
     get:
       summary: Get all departments
       operationId: getAllDepartmentsSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSSS
